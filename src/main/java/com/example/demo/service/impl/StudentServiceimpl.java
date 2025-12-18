@@ -1,5 +1,6 @@
 
 package com.example.demo.service.impl;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 import com.example.demo.service.StudentService;
@@ -16,6 +17,10 @@ public class StudentServiceimpl implements StudentService{
     @Override
     public StudentEntity postdata(StudentEntity stu){
         return student.save(stu);
+    }
+    @Override
+    public List<StudentEntity>getAllData(){
+        return student.findAll(); 
     }
 
 }
