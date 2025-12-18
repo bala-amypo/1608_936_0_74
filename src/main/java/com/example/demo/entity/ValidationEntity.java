@@ -1,6 +1,14 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.
 
 @Entity
-public class 
+public class ValidationEntity{
+
+    private Long id;
+    private String username;
+    private String email;
+    private String password;
+    private int age;
+}
