@@ -1,31 +1,30 @@
-
 package com.example.demo.service.impl;
-import java.util.List;
 
 import org.springframework.stereotype.Service;
 import com.example.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.example.demo.repository.StudentRepository;
-import com.example.demo.entity.StudentEntity;
-
+import com.example.demo.repository.Studentrepository;
+import com.example.demo.entity.Studententity;
+import java.util.List;
 
 @Service
-public class StudentServiceimpl implements StudentService{
+public class StudentServiceImpl implements StudentService{
         
-    @Autowired StudentRepository student;
+    @Autowired Studentrepository student;
     // save,findAll(),findById(),deleteId(),existsById()
     @Override
-    public StudentEntity postdata(StudentEntity stu){
-        return student.save(stu);
+    public Studententity postdata(Studententity entity){
+        return student.save(entity);
     }
     @Override
-    public List<StudentEntity>getAllData(){
-        return student.findAll(); 
+    public List<Studententity>getAllData(){
+        return student.findAll();
     }
     @Override
-    public String DeleteData( int id){
-        student.deleteById(id);
-        return "Deleted Successfully";
+    public String DeleteData(int id){
+            student.deleteById(id);
+            return "Delete Successfully";
+    
     }
 
 }
