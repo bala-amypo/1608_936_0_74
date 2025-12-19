@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RestController
 public class ValidationController{
     
-@Autowired ValidationService val;
+@Autowired ValidationService value;
 @PostMapping("/post2")
     public ValidationEntity sendData(@Valid @RequestBody ValidationEntity value){
-            return val.postdata(value);
+            return value.postdata(value);
 }
 @GetMapping("/put/{id}")
 public ValidationEntity getData1(@PathVariable Long id){
