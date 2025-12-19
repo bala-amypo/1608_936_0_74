@@ -8,7 +8,7 @@ import com.example.demo.entity.StudentEntity;
 import java.util.List;
 
 @Service
-public class StudentServiceImpl implements StudentService{
+public class StudentServiceimpl implements StudentService{
 
 @Autowired StudentRepository student;
 //save()
