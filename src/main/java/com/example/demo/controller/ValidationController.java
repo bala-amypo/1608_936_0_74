@@ -14,7 +14,7 @@ public class ValidationController{
 @Autowired ValidationService value;
 @PostMapping("/post2")
     public ValidationEntity sendData(@Valid @RequestBody ValidationEntity value){
-            return value.postdata(value);
+            return value.postdata1(value);
 }
 @GetMapping("/put/{id}")
 public ValidationEntity getData1(@PathVariable Long id){
