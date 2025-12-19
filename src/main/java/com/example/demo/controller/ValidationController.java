@@ -14,5 +14,5 @@ public class ValidationController{
     public ValidationEntity sendData(@Valid @RequestBody ValidationEntity value){
             return val.postdata(value);
 }
-
+@GetMapping()
 }
