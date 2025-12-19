@@ -18,6 +18,6 @@ public class ValidationController{
 }
 @GetMapping("/put/{id}")
 public ValidationEntity getData1(@PathVariable Long id){
-    return val.getData(id);
+    return val.getData1(id);
 }
 }
