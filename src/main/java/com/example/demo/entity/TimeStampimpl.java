@@ -1,25 +1,20 @@
-package com.example.demo.repository;
-import org.springframework.stereotype.Repository;
-import org.springframework.data.jpa.repository.JpaRepository;
+package com.example.demo.service.impl;
+import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.example.demo.repository.TimeStampRepository;
 import com.example.demo.entity.TimeStamp;
+import com.example.demo.service.TimeStampService;
 
-@Repository
-public interface TimeStampRepository extends JpaRepository<TimeStamp,Long>{
+@Service
+public class TimeStampImpl implements TimeStampService{
 
+@Autowired TimeStampRepository stamp;
 
-}
+@Override
+    public TimeStamp postdata(TimeStamp val){
+        
+        return stamp.save(val);
 
-
-
-
-
-
-package com.example.demo.service;
-
-import com.example.demo.entity.TimeStamp;
-
-public  TimeStampService{
-
-TimeStamp postdata(TimeStamp val);
+    }
 
 }
