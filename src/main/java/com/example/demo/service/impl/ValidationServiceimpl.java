@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 import com.example.demo.repository.ValidationRepository;
 import com.example.demo.entity.ValidationEntity;
 
-@Service
-public class ValidationServiceimpl implements ValidationService{
+@Service  
+public ValidationServiceimpl implements ValidationService{
 
 @Autowired ValidationRepository value;
 
@@ -18,6 +18,6 @@ public class ValidationServiceimpl implements ValidationService{
     }
     @Override
     public ValidationEntity getStudentById(Integer id){
-        return repo.findById(id).orElseThrow()
+        return repo.findById(id).orElseThrow(() -> new ValidationException(""))
     }
 }
