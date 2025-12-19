@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.entity.ValidationEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import com.example.demo.service.ValidationService;
+import
 import jakarta.validation.Valid;
 @RestController
 public class ValidationController{
@@ -14,5 +15,8 @@ public class ValidationController{
     public ValidationEntity sendData(@Valid @RequestBody ValidationEntity value){
             return val.postdata(value);
 }
-@GetMapping()
+@GetMapping("/put/{id}")
+public ValidationEntity getData(@PathVariable Long id){
+    return val.getData(id);
+}
 }
