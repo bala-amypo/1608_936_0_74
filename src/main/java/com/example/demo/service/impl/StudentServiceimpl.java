@@ -1,21 +1,51 @@
 package com.example.demo.service.impl;
-import org.springframework.beans.factory.annotation.Autowired;
-import com.example.demo.service.ValidationService;
+
 import org.springframework.stereotype.Service;
-import com.example.demo.repository.ValidationRepository;
-import com.example.demo.entity.ValidationEntity;
+import com.example.demo.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.example.demo.repository.StudentRepository;
+import com.example.demo.entity.StudentEntity;
+import java.util.List;
 
 @Service
-public class ValidationServiceImpl implements ValidationService{
+public class StudentServiceImpl implements StudentService{
 
-@Autowired ValidationRepository value;
-
+@Autowired StudentRepository student;
+//save()
+//findAll()
+//findById()
+//deleteById()
+//existsById()
 @Override
-    public ValidationEntity postdata(ValidationEntity val){
+    public StudentEntity postdata(StudentEntity stu){
         
-        return value.save(val);
+        return student.save(stu);
 
     }
+@Override
+ public List<StudentEntity> getAllData(){
+  
+  return student.findAll();
+  }
+
+@Override
+public String deleteData(int id){
+
+ student.deleteById(id);
+  return "Deleted Successfully";
 
 }
+@Override
+public StudentEntity getData(int id){
+   return student.findById(id).orElse(null);
+}
+@Override
+ public StudentEntity updateData(int id,StudentEntity entity){
+    if(student.existsById(id)){
+        entity.setId(id);
+        return student.save(entity);
+            }
+            return null;
+ }
 
+}
