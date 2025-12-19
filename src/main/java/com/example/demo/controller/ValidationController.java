@@ -17,7 +17,7 @@ public class ValidationController{
             return val.postdata(value);
 }
 @GetMapping("/put/{id}")
-public ValidationEntity getData(@PathVariable Long id){
+public ValidationEntity getData1(@PathVariable Long id){
     return val.getData(id);
 }
 }
