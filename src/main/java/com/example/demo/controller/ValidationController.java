@@ -5,8 +5,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.entity.ValidationEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import com.example.demo.service.ValidationService;
-import
+import org.springframework.web.bind.annotation.PathVariable;
 import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.GetMapping;
 @RestController
 public class ValidationController{
     
